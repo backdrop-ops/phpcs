@@ -27,7 +27,7 @@ phpcs --standard=/path/to/phpcs_backdrop/Backdrop .
 See full phpcs documentation in their Wiki:
 https://github.com/squizlabs/PHP_CodeSniffer/wiki
 
-Or run `php --help` for a short overview.
+Or run `phpcs --help` for a short overview.
 
 ## Issues
 
