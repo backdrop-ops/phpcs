@@ -7,11 +7,14 @@ See the [official documentation](https://docs.backdropcms.org/php-standards)
 
 Work in progress, see https://github.com/backdrop/backdrop-issues/issues/5245
 
+For now you can simply download the zip file or clone it locally. Put it
+somewhere *outside* your Backdrop install.
+
 ## Usage
 
 There are several ways to install the `phpcs` commandline tool in your dev
 environment.
-Several Linux distributions provide a package (e.g. Debian php-codesniffer).
+Somel Linux distributions provide a package (e.g. Debian php-codesniffer).
 Make sure, the version is at least 3.5.
 
 But you can also download phpcs from Github and put it in your $PATH.
