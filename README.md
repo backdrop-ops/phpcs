@@ -14,8 +14,9 @@ somewhere *outside* your Backdrop install.
 
 There are several ways to install the `phpcs` commandline tool in your dev
 environment.
-Somel Linux distributions provide a package (e.g. Debian php-codesniffer).
+Some Linux distributions provide a package (e.g. Debian php-codesniffer).
 Make sure, the version is at least 3.5.
+If you want to run it on PHP 8.1, it has to be at least 3.7.1.
 
 But you can also download phpcs from Github and put it in your $PATH.
 
