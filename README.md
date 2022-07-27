@@ -44,8 +44,9 @@ Created for Backdrop by Indigoxela.
 [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) is a project by
  Squiz Labs, licensed under BSD-3-Clause.
 
-Several sniffs for the Backdrop ruleset have been forked from Drupal Coder,
- which is licensed under GPL-2.0-or-later.
+Several sniffs for the Backdrop ruleset have been forked from
+[Drupal Coder](https://github.com/pfrenssen/coder), which is licensed under
+ GPL-2.0-or-later.
 
 ## License
 
