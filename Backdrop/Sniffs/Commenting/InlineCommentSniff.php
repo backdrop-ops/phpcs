@@ -71,7 +71,6 @@ class InlineCommentSniff implements Sniff
             );
 
             $ignore = [
-                T_ATTRIBUTE,
                 T_CLASS,
                 T_INTERFACE,
                 T_TRAIT,
@@ -91,6 +90,15 @@ class InlineCommentSniff implements Sniff
                 T_REQUIRE_ONCE,
                 T_VAR,
             ];
+
+            // T_ATTRIBUTE is not available prior to PHP 8.0. Prevent errors.
+            if (defined('T_ATTRIBUTE')) {
+                $ignore[] = T_ATTRIBUTE;
+            }
+            else {
+                define('T_ATTRIBUTE', 'placeholder');
+                define('T_ATTRIBUTE_END', 'placeholder');
+            }
 
             // Also ignore all doc blocks defined in the outer scope (no scope
             // conditions are set).
@@ -141,6 +149,9 @@ class InlineCommentSniff implements Sniff
         }//end if
 
         if ($tokens[$stackPtr]['content'][0] === '#') {
+            if ($tokens[$stackPtr]['content'] === '#[\ReturnTypeWillChange]' . "\n") {
+                return;
+            }
             $error = 'Perl-style comments are not allowed; use "// Comment" instead';
             $fix   = $phpcsFile->addFixableError($error, $stackPtr, 'WrongStyle');
             if ($fix === true) {

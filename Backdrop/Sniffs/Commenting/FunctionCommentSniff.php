@@ -124,6 +124,12 @@ class FunctionCommentSniff implements Sniff
         }
 
         if ($tokens[$commentEnd]['code'] === T_COMMENT) {
+            // On PHP versions prior to 8.0 T_ATTRIBUTE is not available, so
+            // this ends up as T_COMMENT.
+            if ($tokens[$beforeFunction]['content'] === '#[\ReturnTypeWillChange]' . "\n") {
+                return;
+            }
+
             $fix = $phpcsFile->addFixableError('You must use "/**" style comments for a function comment', $stackPtr, 'WrongStyle');
             if ($fix === true) {
                 // Convert the comment into a doc comment.
