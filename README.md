@@ -20,7 +20,10 @@ If you want to run it on PHP 8.1, it has to be at least 3.7.1.
 
 But you can also download phpcs from Github and put it in your $PATH.
 
-Example usage for the current directory:
+With the "standard" parameter you can now tell phpcs, where the standard is
+located. Point it to the directory that contains the ruleset.xml file.
+
+Example usage to run checks in the current directory.
 
 ```
 phpcs --standard=/path/to/phpcs/Backdrop .
