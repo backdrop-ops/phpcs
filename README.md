@@ -23,7 +23,7 @@ But you can also download phpcs from Github and put it in your $PATH.
 Example usage for the current directory:
 
 ```
-phpcs --standard=/path/to/phpcs_backdrop/Backdrop .
+phpcs --standard=/path/to/phpcs/Backdrop .
 ```
 See full phpcs documentation in their Wiki:
 https://github.com/squizlabs/PHP_CodeSniffer/wiki
@@ -32,11 +32,13 @@ Or run `phpcs --help` for a short overview.
 
 ## Issues
 
-@todo
+Bugs and feature requests should be reported in the
+ [Issue Queue](https://github.com/backdrop-ops/phpcs/issues).
 
 ## Maintainers
 
-@todo
+- [Indigoxela](https://github.com/indigoxela)
+- Additional maintainers welcome!
 
 ## Credits
 

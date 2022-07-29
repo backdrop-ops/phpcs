@@ -78,7 +78,6 @@ class ScopeClosingBraceSniff implements Sniff
             || ($tokens[$lineStart]['code'] === T_INLINE_HTML
             && trim($tokens[$lineStart]['content']) !== '')
         ) {
-            var_dump($tokens[$lastContent]['content']);
             $error = 'Closing brace must be on a line by itself';
             $fix   = $phpcsFile->addFixableError($error, $scopeEnd, 'ContentBefore');
             if ($fix === true) {
