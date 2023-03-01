@@ -41,6 +41,7 @@ Bugs and feature requests should be reported in the
 ## Maintainers
 
 - [Indigoxela](https://github.com/indigoxela)
+- [Peter Anderson](https://github.com/BWPanda)
 - Additional maintainers welcome!
 
 ## Credits
