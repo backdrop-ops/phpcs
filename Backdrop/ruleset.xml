@@ -5,7 +5,7 @@
   <arg name="encoding" value="utf-8"/>
   <!-- This cli arg is only relevant for phpcbf. -->
   <arg name="tab-width" value="2"/>
-   
+
   <!-- Pick some of the Generic ruleset. -->
   <rule ref="Generic.Classes.DuplicateClassName"/>
   <rule ref="Generic.Classes.OpeningBraceSameLine"/>
@@ -37,6 +37,7 @@
   <rule ref="Squiz.Classes.DuplicateProperty"/>
   <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
   <rule ref="Squiz.Classes.SelfMemberReference"/>
+  <rule ref="Squiz.Commenting.DocCommentAlignment"/>
   <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
   <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
   <rule ref="Squiz.Debug.JSLint"/>
