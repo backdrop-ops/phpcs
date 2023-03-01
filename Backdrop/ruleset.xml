@@ -37,7 +37,14 @@
   <rule ref="Squiz.Classes.DuplicateProperty"/>
   <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
   <rule ref="Squiz.Classes.SelfMemberReference"/>
-  <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+  <rule ref="Squiz.Commenting.DocCommentAlignment">
+    <!-- Doesn't allow nested tags. -->
+    <exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/>
+  </rule>
+  <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration">
+    <!-- Overlaps with another Squiz rule. -->
+    <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceAfterArrow"/>
+  </rule>
   <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
   <rule ref="Squiz.ControlStructures.LowercaseDeclaration"/>
   <rule ref="Squiz.Debug.JSLint"/>
@@ -67,10 +74,5 @@
   <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
   <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
   <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
-
-  <!-- Overlaps with another Squiz rule. -->
-  <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration">
-    <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceAfterArrow"/>
-  </rule>
 
 </ruleset>
