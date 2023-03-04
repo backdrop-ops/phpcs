@@ -26,7 +26,7 @@
   <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <properties>
-      <!-- Backdrop requires two-space indentation. -->
+      <!-- Use two-space indentation. -->
       <property name="indent" value="2"/>
     </properties>
   </rule>
@@ -37,11 +37,11 @@
   <rule ref="Squiz.Classes.LowercaseClassKeywords"/>
   <rule ref="Squiz.Classes.SelfMemberReference"/>
   <rule ref="Squiz.Commenting.DocCommentAlignment">
-    <!-- Doesn't allow nested tags. -->
+    <!-- Allow for nested tags. -->
     <exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar"/>
   </rule>
   <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration">
-    <!-- Overlaps with another Squiz rule. -->
+    <!-- Avoid clash with another Squiz rule. -->
     <exclude name="Squiz.ControlStructures.ForEachLoopDeclaration.NoSpaceAfterArrow"/>
   </rule>
   <rule ref="Squiz.ControlStructures.ForLoopDeclaration"/>
