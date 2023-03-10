@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <ruleset name="Backdrop">
   <description>Coding standards for Backdrop CMS.</description>
-  <arg name="extensions" value="php,inc,module,install,profile,engine,test" />
   <arg name="encoding" value="utf-8" />
+  <arg name="extensions" value="php,inc,module,install,profile,engine,test" />
 
+  <!-- Include sniffs from the Generic standard. -->
   <rule ref="Generic">
-    <!-- Customise these. -->
     <properties>
+      <!-- We use 2-space indentation. -->
       <property name="indent" value="2" />
-      <property name="exact" value="true" />
     </properties>
 
-    <!-- Don't want these. -->
+    <!-- Exclude certain sniffs that don't match our coding standards. -->
     <exclude name="Generic.PHP.ClosingPHPTag" />
     <exclude name="Generic.PHP.RequireStrictTypes" />
     <exclude name="Generic.Commenting.DocComment.MissingShort" />
@@ -19,7 +19,7 @@
     <exclude name="Generic.NamingConventions.CamelCapsFunctionName" />
     <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman" />
     <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
-    <exclude name="Generic.CodeAnalysis.EmptyStatement.DetectedCatch" />
+    <exclude name="Generic.CodeAnalysis.EmptyStatement" />
     <exclude name="Generic.PHP.LowerCaseConstant" />
     <exclude name="Generic.Formatting.SpaceAfterNot" />
     <exclude name="Generic.Arrays.DisallowLongArraySyntax" />
@@ -27,10 +27,10 @@
     <exclude name="Generic.CodeAnalysis.AssignmentInCondition" />
     <exclude name="Generic.PHP.NoSilencedErrors" />
     <exclude name="Generic.Files.LineLength" />
-    <exclude name="Generic.Commenting.DocComment.TagValueIndent" />
     <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags" />
     <exclude name="Generic.Commenting.DocComment.ParamNotFirst" />
     <exclude name="Generic.Formatting.NoSpaceAfterCast" />
+    <exclude name="Generic.Commenting.DocComment.TagValueIndent" />
     <exclude name="Generic.Formatting.SpaceBeforeCast" />
     <exclude name="Generic.Commenting.DocComment.NonParamGroup" />
     <exclude name="Generic.Metrics" />
@@ -38,35 +38,108 @@
     <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen" />
     <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose" />
     <exclude name="Generic.Commenting.Todo" />
-    <exclude name="Generic.Files.EndFileNoNewline" />
-    <exclude name="Generic.NamingConventions.AbstractClassNamePrefix" />
-    <exclude name="Generic.Files.OneClassPerFile" />
-    <exclude name="Generic.Files.OneObjectStructurePerFile" />
-    <exclude name="Generic.CodeAnalysis.ForLoopWithTestFunctionCall" />
-
-    <!-- Keep these (un-exclude them later)! -->
-    <exclude name="Generic.Formatting.SpaceAfterCast.NoSpace" />
-    <exclude name="Generic.Arrays.ArrayIndent.CloseBraceNotNewLine" />
-    <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
-    <exclude name="Generic.Commenting.DocComment.ParamGroup" />
-    <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+    <exclude name="Generic.PHP.ForbiddenFunctions" />
     <exclude name="Generic.Commenting.DocComment.LongNotCapital" />
     <exclude name="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma" />
-    <exclude name="Generic.ControlStructures.DisallowYodaConditions.Found" />
-    <exclude name="Generic.Arrays.ArrayIndent.KeyIncorrect" />
-    <exclude name="Generic.Arrays.ArrayIndent.CloseBraceIncorrect" />
-    <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter" />
-    <exclude name="Generic.PHP.ForbiddenFunctions.FoundWithAlternative" />
-    <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
-    <exclude name="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed" />
-    <exclude name="Generic.Commenting.DocComment.ContentAfterOpen" />
-    <exclude name="Generic.Commenting.DocComment.ContentBeforeClose" />
-    <exclude name="Generic.Commenting.DocComment.SpacingAfter" />
+    <exclude name="Generic.Files.EndFileNoNewline" />
   </rule>
 
-  <!-- Lines to fix.
-  309: Data type in brackets
-  310: 2 spaces
-  -->
+  <!-- Include sniffs from the Squiz standard. -->
+  <rule ref="Squiz">
+    <properties>
+      <!-- We use 2-space indentation. -->
+      <property name="indent" value="2" />
+    </properties>
 
+    <!-- Exclude certain sniffs that don't match our coding standards. -->
+    <exclude name="Squiz.Files.FileExtension" />
+    <exclude name="Squiz.Commenting.FileComment.PackageTagOrder" />
+    <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+    <exclude name="Squiz.Commenting.FileComment.MissingSubpackageTag" />
+    <exclude name="Squiz.Commenting.BlockComment.WrongStart" />
+    <exclude name="Squiz.Commenting.InlineComment.DocBlock" />
+    <exclude name="Squiz.Functions.GlobalFunction" />
+    <exclude name="Squiz.NamingConventions.ValidFunctionName.NotCamelCaps" />
+    <exclude name="Squiz.WhiteSpace.FunctionSpacing.Before" />
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+    <exclude name="Squiz.PHP.GlobalKeyword" />
+    <exclude name="Squiz.NamingConventions.ValidVariableName.NotCamelCaps" />
+    <exclude name="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue" />
+    <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
+    <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.NoLineAfterClose" />
+    <exclude name="Squiz.Commenting.ClosingDeclarationComment" />
+    <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose" />
+    <exclude name="Squiz.WhiteSpace.FunctionSpacing.After" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceBeforeEquals" />
+    <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceAfterEquals" />
+    <exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.DoubleArrowNotAligned" />
+    <exclude name="Squiz.Strings.ConcatenationSpacing" />
+    <exclude name="Squiz.ControlStructures.ElseIfDeclaration" />
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments.FoundInControlStructure" />
+    <exclude name="Squiz.Commenting.LongConditionClosingComment" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingParamName" />
+    <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
+    <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+    <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
+    <exclude name="Squiz.Commenting.FunctionComment.ScalarTypeHintMissing" />
+    <exclude name="Squiz.Commenting.FunctionComment.IncorrectTypeHint" />
+    <exclude name="Squiz.PHP.DisallowComparisonAssignment" />
+    <exclude name="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets" />
+    <exclude name="Squiz.PHP.DisallowInlineIf" />
+    <exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar" />
+    <exclude name="Squiz.PHP.DisallowBooleanStatement" />
+    <exclude name="Squiz.Formatting.OperatorBracket.MissingBrackets" />
+    <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.SpacingAfterCase" />
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.EmptyCase" />
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.BreakIndent" />
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.DefaultNoBreak" />
+    <exclude name="Squiz.Commenting.FunctionComment.InvalidReturn" />
+    <exclude name="Squiz.NamingConventions.ValidVariableName.StringNotCamelCaps" />
+    <exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar" />
+    <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing.Before" />
+    <exclude name="Squiz.Commenting.FunctionComment.SpacingAfterParamType" />
+    <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName" />
+    <exclude name="Squiz.PHP.DisallowSizeFunctionsInLoops" />
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.MissingDefault" />
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
+    <exclude name="PEAR.ControlStructures.MultiLineCondition" />
+    <exclude name="Squiz.Operators.IncrementDecrementUsage.NoBrackets" />
+    <exclude name="Squiz.PHP.DiscouragedFunctions.Discouraged" />
+    <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows" />
+
+    <!-- Keep these (un-exclude them later)! -->
+    <exclude name="Squiz.Commenting.EmptyCatchComment.Missing" />
+    <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
+    <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore" />
+    <exclude name="Squiz.Commenting.FunctionComment.TypeHintMissing" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingReturn" />
+    <exclude name="Squiz.Commenting.FunctionComment.MissingReturnType" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed" />
+    <exclude name="Squiz.Commenting.InlineComment.NotCapital" />
+    <exclude name="Squiz.PHP.CommentedOutCode.Found" />
+    <exclude name="Squiz.Commenting.BlockComment.SingleLine" />
+    <exclude name="Squiz.Strings.DoubleQuoteUsage.NotRequired" />
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+    <exclude name="Squiz.Commenting.PostStatementComment" />
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.SpacingAfterBreak" />
+    <exclude name="Squiz.Commenting.FunctionComment.ParamNameNoMatch" />
+    <exclude name="Generic.Formatting.SpaceAfterCast" />
+    <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
+    <exclude name="Generic.Arrays.ArrayIndent.CloseBraceNotNewLine" />
+    <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
+    <exclude name="PEAR.Files.IncludingFile.UseIncludeOnce" />
+    <exclude name="Generic.Commenting.DocComment.ParamGroup" />
+    <exclude name="Squiz.Commenting.DocCommentAlignment.SpaceBeforeStar" />
+    <exclude name="Squiz.Commenting.InlineComment.SpacingBefore" />
+    <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
+    <exclude name="Generic.ControlStructures.DisallowYodaConditions" />
+    <exclude name="Squiz.WhiteSpace.FunctionOpeningBraceSpace.SpacingAfter" />
+    <exclude name="Squiz.Commenting.FunctionComment.Missing" />
+    <exclude name="Squiz.Arrays.ArrayDeclaration.NoComma" />
+  </rule>
 </ruleset>
