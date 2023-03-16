@@ -95,7 +95,6 @@
     <exclude name="Squiz.Commenting.DocCommentAlignment.SpaceAfterStar" />
     <exclude name="Squiz.Commenting.FileComment.AuthorTagOrder" />
     <exclude name="Squiz.Commenting.FileComment.CopyrightTagOrder" />
-    <exclude name="Squiz.Commenting.FileComment.CopyrightTagOrder" />
     <exclude name="Squiz.Commenting.FileComment.MissingAuthorTag" />
     <exclude name="Squiz.Commenting.FileComment.MissingCopyrightTag" />
     <exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
@@ -139,12 +138,10 @@
     <exclude name="Squiz.NamingConventions.ValidVariableName.StringNotCamelCaps" />
     <exclude name="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue" />
     <exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed" />
-    <exclude name="Squiz.Operators.IncrementDecrementUsage.NoBrackets" />
     <exclude name="Squiz.Operators.IncrementDecrementUsage" />
     <exclude name="Squiz.PHP.DisallowBooleanStatement" />
     <exclude name="Squiz.PHP.DisallowComparisonAssignment" />
     <exclude name="Squiz.PHP.DisallowInlineIf" />
-    <exclude name="Squiz.PHP.DisallowMultipleAssignments.FoundInControlStructure" />
     <exclude name="Squiz.PHP.DisallowMultipleAssignments" />
     <exclude name="Squiz.PHP.DisallowSizeFunctionsInLoops" />
     <exclude name="Squiz.PHP.DiscouragedFunctions.Discouraged" />
@@ -152,8 +149,8 @@
     <exclude name="Squiz.PHP.EmbeddedPhp.OpenTagIndent" />
     <exclude name="Squiz.PHP.Eval" />
     <exclude name="Squiz.PHP.GlobalKeyword" />
-    <exclude name="Squiz.PHP.Heredoc.NotAllowed" />
-    <exclude name="Squiz.Scope.MethodScope.Missing" />
+    <exclude name="Squiz.PHP.Heredoc" />
+    <exclude name="Squiz.Scope.MethodScope" />
     <exclude name="Squiz.Strings.ConcatenationSpacing" />
     <exclude name="Squiz.Strings.DoubleQuoteUsage.ContainsVar" />
     <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.LineAfterClose" />
@@ -166,7 +163,7 @@
     <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing.Before" />
 
     <!-- Keep these (un-exclude them later)! -->
-    <exclude name="Generic.Arrays.ArrayIndent.CloseBraceIncorrect" />
+    <!-- <exclude name="Generic.Arrays.ArrayIndent.CloseBraceIncorrect" />
     <exclude name="Generic.Arrays.ArrayIndent.CloseBraceNotNewLine" />
     <exclude name="Generic.Arrays.ArrayIndent.KeyIncorrect" />
     <exclude name="Generic.Classes.DuplicateClassName.Found" />
@@ -337,7 +334,7 @@
     <exclude name="Squiz.WhiteSpace.ScopeKeywordSpacing.Incorrect" />
     <exclude name="Squiz.WhiteSpace.SemicolonSpacing.Incorrect" />
     <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines" />
-    <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />
+    <exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" /> -->
   </rule>
 
   <!-- Exclude files/folders from certain sniffs. -->
