@@ -285,13 +285,13 @@ class CoreDeprecatedFunctionsSniff extends ForbiddenFunctionsSniff {
    * Custom error wording.
    */
   protected function addError($phpcsFile, $stackPtr, $function, $pattern = NULL) {
-    $data  = [$function];
+    $data = [$function];
     $error = 'Function %s() has been deprecated';
     if ($replacement = $this->forbiddenFunctions[$function]) {
       $data[] = $replacement;
       $error .= '; use %s() instead.';
     }
-    $type  = 'CoreDeprecated';
+    $type = 'CoreDeprecated';
 
     if ($this->error === TRUE) {
       $phpcsFile->addError($error, $stackPtr, $type, $data);
