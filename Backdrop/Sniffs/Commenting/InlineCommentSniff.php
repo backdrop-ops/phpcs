@@ -216,6 +216,12 @@ class InlineCommentSniff implements Sniff
                 break;
             }
 
+            // Comments for cspell exclude or include patterns also mean a new
+            // section.
+            if (preg_match('|^//[\s]*cspell:|', $tokens[$nextComment]['content']) === 1) {
+                break;
+            }
+
             $commentTokens[] = $nextComment;
             $lastComment     = $nextComment;
         }//end while
