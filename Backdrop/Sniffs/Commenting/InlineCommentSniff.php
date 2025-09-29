@@ -107,23 +107,6 @@ class InlineCommentSniff implements Sniff
                 return;
             }
 
-            if ($phpcsFile->tokenizerType === 'JS') {
-                // We allow block comments if a function or object
-                // is being assigned to a variable.
-                $ignore    = Tokens::$emptyTokens;
-                $ignore[]  = T_EQUAL;
-                $ignore[]  = T_STRING;
-                $ignore[]  = T_OBJECT_OPERATOR;
-                $nextToken = $phpcsFile->findNext($ignore, ($nextToken + 1), null, true);
-                if ($tokens[$nextToken]['code'] === T_FUNCTION
-                    || $tokens[$nextToken]['code'] === T_CLOSURE
-                    || $tokens[$nextToken]['code'] === T_OBJECT
-                    || $tokens[$nextToken]['code'] === T_PROTOTYPE
-                ) {
-                    return;
-                }
-            }
-
             $prevToken = $phpcsFile->findPrevious(
                 Tokens::$emptyTokens,
                 ($stackPtr - 1),
@@ -135,16 +118,6 @@ class InlineCommentSniff implements Sniff
                 return;
             }
 
-            // Inline doc blocks are allowed in JSDoc.
-            if ($tokens[$stackPtr]['content'] === '/**' && $phpcsFile->tokenizerType !== 'JS') {
-                // The only exception to inline doc blocks is the /** @var */
-                // declaration. Allow that in any form.
-                $varTag = $phpcsFile->findNext([T_DOC_COMMENT_TAG], ($stackPtr + 1), $tokens[$stackPtr]['comment_closer'], false, '@var');
-                if ($varTag === false) {
-                    $error = 'Inline doc block comments are not allowed; use "/* Comment */" or "// Comment" instead';
-                    $phpcsFile->addError($error, $stackPtr, 'DocBlock');
-                }
-            }
         }//end if
 
         if ($tokens[$stackPtr]['content'][0] === '#') {
