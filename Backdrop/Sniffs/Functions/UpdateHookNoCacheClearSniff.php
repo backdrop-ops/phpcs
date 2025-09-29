@@ -35,14 +35,14 @@ class UpdateHookNoCacheClearSniff implements Sniff {
    * @return void
    */
   public function process(File $phpcsFile, $stackPtr)  {
-    $tokens = $phpcsFile->getTokens();
 
     // We only care about install files.
     $path_parts = pathinfo($phpcsFile->path);
     if ($path_parts['extension'] != 'install') {
-      return;
+      return $phpcsFile->numTokens;
     }
 
+    $tokens = $phpcsFile->getTokens();
     // We don't care about top level functions.
     if (empty($tokens[$stackPtr]['level'])) {
       return;
@@ -63,7 +63,7 @@ class UpdateHookNoCacheClearSniff implements Sniff {
       $parent_name_pos = $phpcsFile->findNext(T_STRING, $parent_pos);
       $parent_function_name = $tokens[$parent_name_pos]['content'];
 
-      if (preg_match('/.+_update_\d+/', $parent_function_name)) {
+      if (preg_match('/^.+_update_\d+$/', $parent_function_name)) {
         $error = 'Flushing caches in update hooks disrupts upgrade processing. Remove %s() from %s().';
         $placeholders = [$function_name, $parent_function_name];
         $phpcsFile->addError($error, $stackPtr, 'NoCacheClear', $placeholders);
