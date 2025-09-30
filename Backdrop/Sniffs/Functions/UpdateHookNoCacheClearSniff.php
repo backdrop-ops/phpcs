@@ -51,7 +51,6 @@ class UpdateHookNoCacheClearSniff implements Sniff {
     $forbidden = array(
       'backdrop_flush_all_caches',
       'cache_clear_all',
-      'cache_flush',
     );
     $function_name = $tokens[$stackPtr]['content'];
     if (in_array($function_name, $forbidden)) {
