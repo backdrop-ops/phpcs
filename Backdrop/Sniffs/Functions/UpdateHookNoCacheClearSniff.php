@@ -64,7 +64,7 @@ class UpdateHookNoCacheClearSniff implements Sniff {
       $parent_function_name = $tokens[$parent_name_pos]['content'];
 
       if (preg_match('/^.+_update_\d+$/', $parent_function_name)) {
-        $error = 'Flushing caches in update hooks disrupts upgrade processing. Remove %s() from %s().';
+        $error = 'Caches are automatically flushed after running updates. Manual flushing disrupts some update processes. Remove %s() from %s().';
         $placeholders = [$function_name, $parent_function_name];
         $phpcsFile->addError($error, $stackPtr, 'NoCacheClear', $placeholders);
       }
