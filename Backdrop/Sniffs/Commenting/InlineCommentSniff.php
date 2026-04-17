@@ -151,6 +151,14 @@ class InlineCommentSniff implements Sniff
             }
         }
 
+        if ($tokens[$stackPtr]['type'] === 'T_COMMENT' && strpos($tokens[$stackPtr]['content'], '@var') !== FALSE) {
+          // Enforce inline type hints to the syntax most widely supported by IDEs and tools.
+          if (strpos($tokens[$stackPtr]['content'], '/**') !== 0) {
+            $error = 'Inline type hint comments must be in the form "/** @var ... */".';
+            $phpcsFile->addError($error, $stackPtr, 'InvalidTypeHint');
+          }
+        }
+
         // Only want inline comments.
         if (substr($tokens[$stackPtr]['content'], 0, 2) !== '//') {
             return;
