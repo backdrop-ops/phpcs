@@ -21,9 +21,13 @@ class ControlSignatureSniff implements Sniff
     /**
      * How many spaces should precede the colon if using alternative syntax.
      *
+     * Backdrop coding standards require no space between the closing
+     * parenthesis (or the "else" keyword) and the colon in templates, e.g.
+     * "<?php if (!empty($item)): ?>" and "<?php else: ?>".
+     *
      * @var integer
      */
-    public $requiredSpacesBeforeColon = 1;
+    public $requiredSpacesBeforeColon = 0;
 
     /**
      * A list of tokenizers this sniff supports.
